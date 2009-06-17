@@ -6,6 +6,10 @@ module LibXMLJRuby
           XML::Parser.file(filename).parse
         end
         
+        def string(str)
+          XML::Parser.string(str).parse
+        end
+        
         def from_java(java_obj)
           d = new
           d.java_obj = java_obj
