@@ -70,10 +70,10 @@ module LibXMLJRuby
         def document
           @document.respond_to?(:java_obj) ? @document.java_obj : @document
         end
-        
+
         class CustomNamespaceContext
-          include NamespaceContext
-          
+          include javax.xml.namespace.NamespaceContext
+
           attr_reader :resolver
 
           def initialize(resolver)

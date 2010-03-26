@@ -51,21 +51,6 @@ end  # module LibXMLJRuby
 
 require 'java'
 require 'stringio'
-import javax.xml.parsers.DocumentBuilder
-import javax.xml.parsers.DocumentBuilderFactory
-import javax.xml.xpath.XPath
-import javax.xml.xpath.XPathFactory
-import javax.xml.xpath.XPathConstants
-import javax.xml.namespace.NamespaceContext
-import java.io.StringReader
-import java.io.StringWriter
-import javax.xml.validation.Schema
-import javax.xml.validation.SchemaFactory
-import java.io.ByteArrayInputStream
-import javax.xml.transform.stream.StreamSource
-import javax.xml.transform.stream.StreamResult
-import javax.xml.transform.TransformerFactory
-import javax.xml.transform.dom.DOMSource
 
 # these use include_class to avoid conflicts with Rake's top-level
 # import method, the issue doesn't seem to occur when not using a
@@ -73,6 +58,23 @@ import javax.xml.transform.dom.DOMSource
 include_class 'com.sun.org.apache.xml.internal.utils.PrefixResolver'
 include_class 'com.sun.org.apache.xml.internal.utils.PrefixResolverDefault'
 include_class 'org.xml.sax.InputSource'
+
+include_class 'java.io.ByteArrayInputStream'
+include_class 'java.io.StringReader'
+include_class 'java.io.StringWriter'
+
+include_class 'javax.xml.parsers.DocumentBuilder'
+include_class 'javax.xml.parsers.DocumentBuilderFactory'
+include_class 'javax.xml.transform.stream.StreamSource'
+include_class 'javax.xml.transform.stream.StreamResult'
+include_class 'javax.xml.transform.TransformerFactory'
+include_class 'javax.xml.transform.dom.DOMSource'
+include_class 'javax.xml.validation.Schema'
+include_class 'javax.xml.validation.SchemaFactory'
+include_class 'javax.xml.xpath.XPath'
+include_class 'javax.xml.xpath.XPathFactory'
+include_class 'javax.xml.xpath.XPathConstants'
+
 
 LibXMLJRuby.require_all_libs_relative_to __FILE__
 ::LibXML = ::LibXMLJRuby
