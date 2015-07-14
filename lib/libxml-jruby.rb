@@ -55,25 +55,29 @@ require 'stringio'
 # these use include_class to avoid conflicts with Rake's top-level
 # import method, the issue doesn't seem to occur when not using a
 # string.
-java_import 'com.sun.org.apache.xml.internal.utils.PrefixResolver'
-java_import 'com.sun.org.apache.xml.internal.utils.PrefixResolverDefault'
-java_import 'org.xml.sax.InputSource'
 
-java_import 'java.io.ByteArrayInputStream'
-java_import 'java.io.StringReader'
-java_import 'java.io.StringWriter'
+java_import_defined = self.class.private_method_defined?(:java_import)
+importer = method java_import_defined ? :java_import : :include_class
 
-java_import 'javax.xml.parsers.DocumentBuilder'
-java_import 'javax.xml.parsers.DocumentBuilderFactory'
-java_import 'javax.xml.transform.stream.StreamSource'
-java_import 'javax.xml.transform.stream.StreamResult'
-java_import 'javax.xml.transform.TransformerFactory'
-java_import 'javax.xml.transform.dom.DOMSource'
-java_import 'javax.xml.validation.Schema'
-java_import 'javax.xml.validation.SchemaFactory'
-java_import 'javax.xml.xpath.XPath'
-java_import 'javax.xml.xpath.XPathFactory'
-java_import 'javax.xml.xpath.XPathConstants'
+importer.call 'com.sun.org.apache.xml.internal.utils.PrefixResolver'
+importer.call 'com.sun.org.apache.xml.internal.utils.PrefixResolverDefault'
+importer.call 'org.xml.sax.InputSource'
+
+importer.call 'java.io.ByteArrayInputStream'
+importer.call 'java.io.StringReader'
+importer.call 'java.io.StringWriter'
+
+importer.call 'javax.xml.parsers.DocumentBuilder'
+importer.call 'javax.xml.parsers.DocumentBuilderFactory'
+importer.call 'javax.xml.transform.stream.StreamSource'
+importer.call 'javax.xml.transform.stream.StreamResult'
+importer.call 'javax.xml.transform.TransformerFactory'
+importer.call 'javax.xml.transform.dom.DOMSource'
+importer.call 'javax.xml.validation.Schema'
+importer.call 'javax.xml.validation.SchemaFactory'
+importer.call 'javax.xml.xpath.XPath'
+importer.call 'javax.xml.xpath.XPathFactory'
+importer.call 'javax.xml.xpath.XPathConstants'
 
 
 LibXMLJRuby.require_all_libs_relative_to __FILE__
