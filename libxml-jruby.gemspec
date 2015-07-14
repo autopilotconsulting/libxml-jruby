@@ -13,5 +13,6 @@ Gem::Specification.new do |s|
   s.platform = "jruby"
   s.files = FileList['lib/**/*.rb', 'script/**/*', 'tasks/**/*', '[A-Z]*', 'test/**/*'].to_a
 
-  s.add_development_dependency "pry"
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'pry'
 end
