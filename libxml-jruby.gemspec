@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
   s.platform = "jruby"
   s.files = FileList['lib/**/*.rb', 'script/**/*', 'tasks/**/*', '[A-Z]*', 'test/**/*'].to_a
+
+  s.add_development_dependency "pry"
 end
