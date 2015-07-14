@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = "libxml-jruby"
-  s.version = "1.0.0"
+  s.version = "1.0.1"
   s.date = "2008-09-20"
   s.summary = "LibXMLRuby compatibility layer for jruby"
   s.homepage = "http://rubyforge.org/projects/libxml-jruby"
